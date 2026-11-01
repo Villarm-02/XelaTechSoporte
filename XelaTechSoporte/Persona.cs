@@ -1,6 +1,8 @@
+using System;
+
 namespace XelaTechSoporte
 {
-    // Clase base para Cliente y Tecnico. No se pueden crear objetos Persona directamente.
+    // Clase base de Cliente y Tecnico
     public abstract class Persona
     {
         protected string codigo;
@@ -27,9 +29,9 @@ namespace XelaTechSoporte
 
         public Persona(string codigo, string nombre, string telefono)
         {
-            this.codigo = codigo;
-            this.nombre = nombre;
-            this.telefono = telefono;
+            Codigo = codigo;
+            Nombre = nombre;
+            Telefono = telefono;
         }
 
         // Cada clase hija muestra sus datos a su manera

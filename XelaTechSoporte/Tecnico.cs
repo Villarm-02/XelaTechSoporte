@@ -1,20 +1,19 @@
+using System;
+
 namespace XelaTechSoporte
 {
     public class Tecnico : Persona
     {
-        // Un técnico no puede tener más de 3 trabajos activos al mismo tiempo
-        public const int MaxTrabajos = 3;
-
         private string especialidad;
         private bool disponible;
         private int trabajosActivos;
         private int serviciosFinalizados;
 
-        // Arreglo de 5 posiciones: cuenta cuántas calificaciones de 1, 2, 3, 4 y 5 recibió.
-        // La posición 0 guarda las de 1 estrella y la posición 4 las de 5 estrellas.
-        private int[] calificaciones;
+        // Cuenta cuantas calificaciones de 1, 2, 3, 4 y 5 tiene el tecnico
+        // calificaciones[0] son las de 1 y calificaciones[4] son las de 5
+        private int[] calificaciones = new int[5];
 
-        // Especialidad: Portátil, Escritorio o Impresora
+        // Portatil, Escritorio o Impresora
         public string Especialidad
         {
             get { return especialidad; }
@@ -47,55 +46,62 @@ namespace XelaTechSoporte
         public Tecnico(string codigo, string nombre, string telefono, string especialidad)
             : base(codigo, nombre, telefono)
         {
-            this.especialidad = especialidad;
+            Especialidad = especialidad;
             disponible = true;
             trabajosActivos = 0;
             serviciosFinalizados = 0;
-            calificaciones = new int[5];
         }
 
-        // Revisa si el técnico puede recibir un equipo de cierto tipo
+        // El tecnico puede atender si esta disponible, tiene menos de 3 trabajos
+        // y su especialidad es del mismo tipo que el equipo
         public bool PuedeAtender(string tipoEquipo)
         {
-            return disponible && trabajosActivos < MaxTrabajos && especialidad == tipoEquipo;
+            if (disponible == true && trabajosActivos < 3 && especialidad == tipoEquipo)
+            {
+                return true;
+            }
+            return false;
         }
 
-        // Guarda una calificación de 1 a 5. Devuelve false si el número no es válido.
-        public bool Calificar(int nota)
+        public void Calificar(int nota)
         {
             if (nota < 1 || nota > 5)
             {
-                return false;
+                Console.WriteLine("La calificacion debe estar entre 1 y 5.");
             }
-            calificaciones[nota - 1]++;
-            return true;
+            else
+            {
+                calificaciones[nota - 1] = calificaciones[nota - 1] + 1;
+            }
         }
 
-        // Promedio de las calificaciones recibidas. Si no tiene ninguna, devuelve 0.
         public double Promedio()
         {
+            double suma = 0;
             int total = 0;
-            int suma = 0;
+
             for (int i = 0; i < calificaciones.Length; i++)
             {
-                total = total + calificaciones[i];
                 suma = suma + calificaciones[i] * (i + 1);
+                total = total + calificaciones[i];
             }
+
             if (total == 0)
             {
                 return 0;
             }
-            return (double)suma / total;
+            return suma / total;
         }
 
         public override void MostrarDatos()
         {
-            string estado = disponible ? "Disponible" : "No disponible";
-            Console.WriteLine("Código: " + codigo + " | Nombre: " + nombre + " | Teléfono: " + telefono
-                + " | Especialidad: " + especialidad + " | " + estado
-                + " | Activos: " + trabajosActivos + "/" + MaxTrabajos
-                + " | Finalizados: " + serviciosFinalizados
-                + " | Promedio: " + Promedio().ToString("0.0"));
+            string estado = "No disponible";
+            if (disponible == true)
+            {
+                estado = "Disponible";
+            }
+
+            Console.WriteLine($"[TECNICO] Codigo: {Codigo} | Nombre: {Nombre} | Especialidad: {Especialidad} | Estado: {estado} | Activos: {TrabajosActivos} | Finalizados: {ServiciosFinalizados} | Promedio: {Promedio():0.0}");
         }
     }
 }
