@@ -625,7 +625,7 @@ namespace XelaTechSoporte
                 {
                     codigo = codigo + "X";
                 }
-                string nombre = nombres[azar.Next(nombres.Length)];
+                string nombre = nombres[clientes.Count % nombres.Length];
                 string telefono = azar.Next(30000000, 59999999).ToString();
                 string correo = nombre.Split(' ')[0].ToLower() + (clientes.Count + 1) + "@correo.com";
                 RegistrarCliente(new Cliente(codigo, nombre, telefono, correo, tiposCliente[azar.Next(tiposCliente.Length)]));
