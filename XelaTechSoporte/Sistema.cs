@@ -567,10 +567,10 @@ namespace XelaTechSoporte
                 return;
             }
 
-            Console.Write("Tecnico".PadRight(20));
+            Console.Write("Tecnico");
             for (int d = 0; d < 6; d++)
             {
-                Console.Write(dias[d].Substring(0, 3).PadLeft(6));
+                Console.Write(" | " + dias[d].Substring(0, 3));
             }
             Console.WriteLine();
 
@@ -580,10 +580,10 @@ namespace XelaTechSoporte
 
             for (int f = 0; f < tecnicos.Count; f++)
             {
-                Console.Write(tecnicos[f].Nombre.PadRight(20));
+                Console.Write(tecnicos[f].Nombre);
                 for (int d = 0; d < 6; d++)
                 {
-                    Console.Write(cargaSemanal[f, d].ToString().PadLeft(6));
+                    Console.Write(" | " + cargaSemanal[f, d]);
                     if (cargaSemanal[f, d] > mayor)
                     {
                         mayor = cargaSemanal[f, d];
