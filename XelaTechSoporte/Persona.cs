@@ -2,7 +2,6 @@ using System;
 
 namespace XelaTechSoporte
 {
-    // Clase base de Cliente y Tecnico
     public abstract class Persona
     {
         protected string codigo;
@@ -34,7 +33,6 @@ namespace XelaTechSoporte
             Telefono = telefono;
         }
 
-        // Cada clase hija muestra sus datos a su manera
         public abstract void MostrarDatos();
     }
 }

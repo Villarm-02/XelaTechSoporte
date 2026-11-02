@@ -14,7 +14,6 @@ namespace XelaTechSoporte
             set { correo = value; }
         }
 
-        // Estudiante, Profesional, Negocio o Institucion
         public string Tipo
         {
             get { return tipo; }

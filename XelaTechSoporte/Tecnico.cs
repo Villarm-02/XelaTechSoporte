@@ -9,11 +9,8 @@ namespace XelaTechSoporte
         private int trabajosActivos;
         private int serviciosFinalizados;
 
-        // Cuenta cuantas calificaciones de 1, 2, 3, 4 y 5 tiene el tecnico
-        // calificaciones[0] son las de 1 y calificaciones[4] son las de 5
         private int[] calificaciones = new int[5];
 
-        // Portatil, Escritorio o Impresora
         public string Especialidad
         {
             get { return especialidad; }
@@ -52,8 +49,6 @@ namespace XelaTechSoporte
             serviciosFinalizados = 0;
         }
 
-        // El tecnico puede atender si esta disponible, tiene menos de 3 trabajos
-        // y su especialidad es del mismo tipo que el equipo
         public bool PuedeAtender(string tipoEquipo)
         {
             if (disponible == true && trabajosActivos < 3 && especialidad == tipoEquipo)
