@@ -694,12 +694,12 @@ namespace XelaTechSoporte
 
         private void FilaSolicitud(Solicitud s)
         {
-            Console.WriteLine($" {s.Codigo.PadRight(10)}{s.Cliente.Nombre.PadRight(18)}{s.Equipo.Tipo.PadRight(12)}{s.Estado.ToString().PadRight(18)}{s.FechaRecepcion:dd/MM/yyyy}  Q{s.CalcularTotal(),8:0.00}");
+            Console.WriteLine($" {s.Codigo} | {s.Cliente.Nombre} | {s.Equipo.Tipo} | {s.Estado} | {s.FechaRecepcion:dd/MM/yyyy} | Q{s.CalcularTotal():0.00}");
         }
 
         private void EncabezadoSolicitudes()
         {
-            Console.WriteLine($" {"Codigo".PadRight(10)}{"Cliente".PadRight(18)}{"Equipo".PadRight(12)}{"Estado".PadRight(18)}{"Fecha".PadRight(12)}{"Total",9}");
+            Console.WriteLine(" Codigo | Cliente | Equipo | Estado | Fecha | Total");
             Console.WriteLine("------------------------------------------------------------------------------");
         }
 
@@ -753,11 +753,11 @@ namespace XelaTechSoporte
             }
             List<Tecnico> datos = Ordenamientos.SelectionPorServicios(sistema.Tecnicos, ascendente);
             EncabezadoOrden(titulo, "Selection Sort", "Servicios finalizados", ascendente);
-            Console.WriteLine($" {"Codigo".PadRight(8)}{"Nombre".PadRight(20)}{"Especialidad".PadRight(14)}{"Finalizados",12}{"Promedio",10}");
+            Console.WriteLine(" Codigo | Nombre | Especialidad | Finalizados | Promedio");
             Console.WriteLine("------------------------------------------------------------------");
             for (int i = 0; i < datos.Count; i++)
             {
-                Console.WriteLine($" {datos[i].Codigo.PadRight(8)}{datos[i].Nombre.PadRight(20)}{datos[i].Especialidad.PadRight(14)}{datos[i].ServiciosFinalizados,12}{datos[i].Promedio(),10:0.0}");
+                Console.WriteLine($" {datos[i].Codigo} | {datos[i].Nombre} | {datos[i].Especialidad} | {datos[i].ServiciosFinalizados} | {datos[i].Promedio():0.0}");
             }
             Console.WriteLine($"\n Registros: {datos.Count}     Intercambios realizados: {Ordenamientos.Intercambios}");
         }
@@ -770,11 +770,11 @@ namespace XelaTechSoporte
             }
             List<Repuesto> datos = Ordenamientos.ShellPorExistencia(sistema.Repuestos, ascendente);
             EncabezadoOrden(titulo, "Shell Sort", "Existencia", ascendente);
-            Console.WriteLine($" {"Codigo".PadRight(8)}{"Nombre".PadRight(24)}{"Categoria".PadRight(16)}{"Existencia",11}{"Minima",8}");
+            Console.WriteLine(" Codigo | Nombre | Categoria | Existencia | Minima");
             Console.WriteLine("------------------------------------------------------------------");
             for (int i = 0; i < datos.Count; i++)
             {
-                Console.WriteLine($" {datos[i].Codigo.PadRight(8)}{datos[i].Nombre.PadRight(24)}{datos[i].Categoria.PadRight(16)}{datos[i].Existencia,11}{datos[i].ExistenciaMinima,8}");
+                Console.WriteLine($" {datos[i].Codigo} | {datos[i].Nombre} | {datos[i].Categoria} | {datos[i].Existencia} | {datos[i].ExistenciaMinima}");
             }
             Console.WriteLine($"\n Registros: {datos.Count}     Movimientos realizados: {Ordenamientos.Intercambios}");
         }
@@ -1081,7 +1081,7 @@ namespace XelaTechSoporte
             }
             for (int t = 0; t < tipos.Length; t++)
             {
-                Console.WriteLine($" {tipos[t].PadRight(12)} {conteo[t]} solicitudes");
+                Console.WriteLine($" {tipos[t]} | {conteo[t]} solicitudes");
             }
         }
 
