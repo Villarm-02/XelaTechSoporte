@@ -6,11 +6,11 @@ Proyecto de aplicación 02 del curso Programación Avanzada (Fase 2: implementac
 
 ## Cómo ejecutarlo
 
-1. Abrir `XelaTechSoporte.sln` en Visual Studio 2022.
+1. Abrir `XelaTechSoporte.sln` en Visual Studio 2022 o 2026.
 2. Compilar y ejecutar con F5.
 
 También se puede ejecutar desde la terminal con `dotnet run --project XelaTechSoporte`.
 
 ## Requisitos
 
-- .NET 8
+- .NET 10
