@@ -19,6 +19,7 @@ namespace XelaTechSoporte
             tipo = "Impresora";
         }
 
+        // Costo de revision de una impresora
         public override double CostoRevision()
         {
             return 100;

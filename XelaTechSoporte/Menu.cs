@@ -23,6 +23,7 @@ namespace XelaTechSoporte
             return linea;
         }
 
+        // Se agrego la funcion para leer un numero entero sin que el programa se cierre
         private int LeerEntero(string mensaje)
         {
             int numero;
@@ -34,6 +35,7 @@ namespace XelaTechSoporte
             return numero;
         }
 
+        // Se agrego la funcion para leer un numero con decimales
         private double LeerDouble(string mensaje)
         {
             double numero;
@@ -111,6 +113,7 @@ namespace XelaTechSoporte
             Console.WriteLine("==================================================================");
         }
 
+        // Menu principal del programa
         public void MostrarMenu()
         {
             int opcion = 0;
@@ -416,6 +419,7 @@ namespace XelaTechSoporte
             }
         }
 
+        // Se agrego el menu para manejar las solicitudes
         private void MenuSolicitudes()
         {
             int opcion = 0;
@@ -779,6 +783,7 @@ namespace XelaTechSoporte
             Console.WriteLine($"\n Registros: {datos.Count}     Movimientos realizados: {Ordenamientos.Intercambios}");
         }
 
+        // Se agrego el menu de ordenamientos
         private void MenuOrdenamientos()
         {
             int opcion = 0;
@@ -821,6 +826,7 @@ namespace XelaTechSoporte
             resultadosBusquedas.Add($"{DateTime.Now:HH:mm} | {busqueda} | Encontrados: {encontrados} | Comparaciones: {comparaciones}");
         }
 
+        // Se agrego el menu de busquedas
         private void MenuBusquedas()
         {
             int opcion = 0;
@@ -912,6 +918,7 @@ namespace XelaTechSoporte
             }
         }
 
+        // Se agregaron los reportes del sistema
         public void MostrarReportes()
         {
             int opcion = 0;
