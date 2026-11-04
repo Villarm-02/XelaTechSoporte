@@ -33,6 +33,7 @@ namespace XelaTechSoporte
             cantidadSolicitudes = 0;
         }
 
+        // Se agrego la funcion para contar las solicitudes del cliente
         public void SumarSolicitud()
         {
             cantidadSolicitudes = cantidadSolicitudes + 1;

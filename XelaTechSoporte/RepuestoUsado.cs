@@ -25,6 +25,7 @@ namespace XelaTechSoporte
             Cantidad = cantidad;
         }
 
+        // Se calcula el subtotal del repuesto usado
         public double Subtotal()
         {
             return repuesto.PrecioVenta * cantidad;

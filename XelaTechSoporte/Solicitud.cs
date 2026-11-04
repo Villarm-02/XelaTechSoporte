@@ -116,6 +116,7 @@ namespace XelaTechSoporte
             return true;
         }
 
+        // Solo deja pasar al siguiente estado o cancelar
         public bool CambiarEstado(EstadoSolicitud nuevoEstado)
         {
             if (EstaActiva() == false)
@@ -138,6 +139,7 @@ namespace XelaTechSoporte
             return true;
         }
 
+        // Se agrego la funcion para deshacer el ultimo cambio con la pila
         public bool DeshacerCambio()
         {
             if (EstaActiva() == false)
@@ -167,6 +169,7 @@ namespace XelaTechSoporte
             return true;
         }
 
+        // Se calcula el total: revision + mano de obra + repuestos
         public double CalcularTotal()
         {
             double total = equipo.CostoRevision() + manoObra;

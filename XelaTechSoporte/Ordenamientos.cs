@@ -12,6 +12,7 @@ namespace XelaTechSoporte
             get { return intercambios; }
         }
 
+        // Se agrego el Bubble Sort para ordenar solicitudes por total
         public static List<Solicitud> BubblePorTotal(List<Solicitud> lista, bool ascendente)
         {
             List<Solicitud> datos = new List<Solicitud>(lista);
@@ -44,6 +45,7 @@ namespace XelaTechSoporte
             return datos;
         }
 
+        // Se agrego el Selection Sort para ordenar tecnicos por servicios finalizados
         public static List<Tecnico> SelectionPorServicios(List<Tecnico> lista, bool ascendente)
         {
             List<Tecnico> datos = new List<Tecnico>(lista);
@@ -82,6 +84,7 @@ namespace XelaTechSoporte
             return datos;
         }
 
+        // Se agrego el Shell Sort para ordenar repuestos por existencia
         public static List<Repuesto> ShellPorExistencia(List<Repuesto> lista, bool ascendente)
         {
             List<Repuesto> datos = new List<Repuesto>(lista);
@@ -118,6 +121,7 @@ namespace XelaTechSoporte
             return a.Existencia < b.Existencia;
         }
 
+        // Se agrego el Quick Sort para ordenar solicitudes por fecha
         public static List<Solicitud> QuickPorFecha(List<Solicitud> lista, bool ascendente)
         {
             List<Solicitud> datos = new List<Solicitud>(lista);

@@ -19,6 +19,7 @@ namespace XelaTechSoporte
             tipo = "Portatil";
         }
 
+        // Costo de revision de un portatil
         public override double CostoRevision()
         {
             return 150;

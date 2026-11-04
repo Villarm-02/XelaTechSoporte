@@ -19,6 +19,7 @@ namespace XelaTechSoporte
             tipo = "Escritorio";
         }
 
+        // Costo de revision de una computadora de escritorio
         public override double CostoRevision()
         {
             return 125;

@@ -68,6 +68,7 @@ namespace XelaTechSoporte
             return false;
         }
 
+        // Se agrego la validacion del telefono
         private bool TelefonoValido(string telefono)
         {
             if (telefono == null || telefono.Length != 8)
@@ -85,6 +86,7 @@ namespace XelaTechSoporte
             return true;
         }
 
+        // Se agrego la validacion del correo
         private bool CorreoValido(string correo)
         {
             if (correo == null)
@@ -168,6 +170,7 @@ namespace XelaTechSoporte
             return null;
         }
 
+        // Se agrego la funcion para registrar un cliente
         public bool RegistrarCliente(Cliente cliente)
         {
             if (EstaVacio(cliente.Codigo) || EstaVacio(cliente.Nombre) || EstaVacio(cliente.Tipo))
@@ -225,6 +228,7 @@ namespace XelaTechSoporte
             return true;
         }
 
+        // Se agrego la funcion para registrar un tecnico
         public bool RegistrarTecnico(Tecnico tecnico)
         {
             if (tecnicos.Count >= 10)
@@ -255,6 +259,7 @@ namespace XelaTechSoporte
             return true;
         }
 
+        // Se agrego la funcion para registrar un equipo
         public bool RegistrarEquipo(Equipo equipo)
         {
             if (EstaVacio(equipo.Codigo) || EstaVacio(equipo.Serie) || EstaVacio(equipo.Marca) || EstaVacio(equipo.Modelo))
@@ -288,6 +293,7 @@ namespace XelaTechSoporte
             return true;
         }
 
+        // Se agrego la funcion para registrar un repuesto
         public bool RegistrarRepuesto(Repuesto repuesto)
         {
             if (EstaVacio(repuesto.Codigo) || EstaVacio(repuesto.Nombre) || EstaVacio(repuesto.Categoria))
@@ -318,6 +324,7 @@ namespace XelaTechSoporte
             return true;
         }
 
+        // Se agrego la funcion para crear una solicitud y meterla a la cola
         public Solicitud CrearSolicitud(string codigoCliente, string codigoEquipo, string problema, string prioridad)
         {
             Cliente cliente = BuscarCliente(codigoCliente);
@@ -384,6 +391,7 @@ namespace XelaTechSoporte
             }
         }
 
+        // Se busca el tecnico disponible con menos trabajos
         private Tecnico ElegirTecnico(string tipoEquipo)
         {
             Tecnico elegido = null;
@@ -415,6 +423,7 @@ namespace XelaTechSoporte
             return AtenderSiguiente(DiaDeHoy());
         }
 
+        // Se atiende primero la cola urgente y despues la normal
         public Solicitud AtenderSiguiente(int dia)
         {
             QuitarCanceladas(colaUrgente);
@@ -453,6 +462,7 @@ namespace XelaTechSoporte
             return solicitud;
         }
 
+        // Se agrego la funcion para cambiar el estado de una solicitud
         public bool CambiarEstado(Solicitud solicitud, EstadoSolicitud nuevoEstado)
         {
             if (nuevoEstado == EstadoSolicitud.Asignada)
@@ -559,6 +569,7 @@ namespace XelaTechSoporte
             return true;
         }
 
+        // Se muestra la matriz de carga semanal
         public void MostrarCargaSemanal()
         {
             if (tecnicos.Count == 0)
@@ -604,6 +615,7 @@ namespace XelaTechSoporte
             }
         }
 
+        // Se agrego la funcion para generar datos de prueba
         public void GenerarDatosPrueba()
         {
             Random azar = new Random();
