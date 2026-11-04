@@ -12,6 +12,7 @@ namespace XelaTechSoporte
             get { return comparaciones; }
         }
 
+        // Se agrego la busqueda secuencial de clientes por nombre
         public static List<Cliente> ClientesPorNombre(List<Cliente> clientes, string texto)
         {
             List<Cliente> encontrados = new List<Cliente>();
@@ -28,6 +29,7 @@ namespace XelaTechSoporte
             return encontrados;
         }
 
+        // Se agrego la busqueda secuencial de solicitudes por estado
         public static List<Solicitud> SolicitudesPorEstado(List<Solicitud> solicitudes, EstadoSolicitud estado)
         {
             List<Solicitud> encontradas = new List<Solicitud>();
@@ -44,6 +46,7 @@ namespace XelaTechSoporte
             return encontradas;
         }
 
+        // Se agrego la busqueda secuencial de equipos por marca
         public static List<Equipo> EquiposPorMarca(List<Equipo> equipos, string marca)
         {
             List<Equipo> encontrados = new List<Equipo>();
@@ -60,6 +63,7 @@ namespace XelaTechSoporte
             return encontrados;
         }
 
+        // Se ordenan las solicitudes por codigo para poder usar la busqueda binaria
         public static Solicitud[] OrdenarPorCodigo(List<Solicitud> solicitudes)
         {
             Solicitud[] arreglo = solicitudes.ToArray();
@@ -90,6 +94,7 @@ namespace XelaTechSoporte
             return true;
         }
 
+        // Se agrego la busqueda binaria de una solicitud por codigo
         public static Solicitud BinariaPorCodigo(Solicitud[] arreglo, string codigo)
         {
             comparaciones = 0;

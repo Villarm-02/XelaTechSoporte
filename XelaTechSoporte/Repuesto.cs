@@ -72,6 +72,7 @@ namespace XelaTechSoporte
             cantidadUsada = 0;
         }
 
+        // Se agrego la funcion para descontar repuestos de la existencia
         public bool Descontar(int cantidad)
         {
             if (cantidad <= 0)

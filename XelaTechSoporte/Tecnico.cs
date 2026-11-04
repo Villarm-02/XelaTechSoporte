@@ -49,6 +49,7 @@ namespace XelaTechSoporte
             serviciosFinalizados = 0;
         }
 
+        // Se revisa si el tecnico puede atender ese tipo de equipo
         public bool PuedeAtender(string tipoEquipo)
         {
             if (disponible == true && trabajosActivos < 3 && especialidad == tipoEquipo)
@@ -70,6 +71,7 @@ namespace XelaTechSoporte
             }
         }
 
+        // Se calcula el promedio de las calificaciones
         public double Promedio()
         {
             double suma = 0;
